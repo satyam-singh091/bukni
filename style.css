@@ -5,382 +5,328 @@
   --tri2: #2a1411;
 }
 
-@font-face {
-  font-family: light 1;
-  font-weight: 300;
-  src: url(./AeonikTRIAL-Bold.otf);
-}
-
-@font-face {
-  font-family: light 2;
-  src: url(./AeonikTRIAL-Light.otf);
-}
-
-@font-face {
-  font-family: light 3;
-  src: url(./AeonikTRIAL-Regular.otf);
-}
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: light;
- color: #c8c8c8;
+  color: #c8c8c8;
 }
 
-html,
+html {
+  font-size: 16px;
+}
+
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 
+/* MAIN */
 #main {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: var(--tri2);
 }
 
+/* NAV */
 nav {
   width: 100%;
   height: 60px;
   position: fixed;
   background-color: var(--sec);
+  z-index: 100;
 }
 
+/* ================= CARDS ================= */
+
 section.allElem {
-  height: 100%;
   width: 100%;
-  padding: 40px;
-  padding-top: 80px;
+  padding: 80px 20px 20px;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 40px;
-  position: absolute;
+  justify-content: center;
+  gap: 20px;
 }
 
 .elems {
-  background-color: aqua;
-  width: 290px;
-  height: 400px;
+  width: 100%;
+  max-width: 290px;
+  height: 380px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  transition: all ease 0.5s;
+  transition: 0.3s;
   cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 2);
 }
 
 .elems img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .elems h2 {
   position: absolute;
-  bottom: 5%;
-  font-weight: 500;
-  font-size: 30px;
-  right: 5%;
+  bottom: 10px;
+  right: 10px;
+  font-size: 22px;
 }
 
 .elems:active {
-  scale: 0.97;
+  transform: scale(0.96);
 }
 
+/* ================= FULL PAGE ================= */
+
 .Fullelem {
-  height: 100%;
   width: 100%;
-  background-color: #2a1411;
-  padding: 40px;
+  min-height: 100vh;
+  background-color: var(--tri2);
+  padding: 20px;
   display: none;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .back {
   position: absolute;
-  right: 5%;
+  top: 10px;
+  right: 10px;
   background: red;
-  color: rgb(243, 243, 115);
-  border-radius: 20px;
-  font-size: 20px;
-  padding: 10px 15px;
+  color: yellow;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 8px 12px;
   border: none;
-  font-weight: 600;
-  transition: all ease 0.5s;
 }
 
-.back:active {
-  scale: 0.96;
-}
-
+/* ================= TODO ================= */
 
 .todo-list-fullpage {
-  font-size: 60px;
+  font-size: 40px;
 }
-.todo-list-fullpage .todo-container {
+
+.todo-container {
   width: 100%;
-  height: 80%;
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.todo-list-fullpage .todo-container .addTask {
-  width: 33%;
-  height: 100%;
+/* ADD TASK */
+.addTask {
+  width: 35%;
   background-color: var(--sec);
   border-radius: 10px;
 }
 
-.todo-list-fullpage .todo-container .allTask {
-  width: 65%;
-  height: 100%;
-  background-color: var(--sec);
-  border-radius: 10px;
-  padding: 30px;
-  overflow: auto;
-
-}
-
-.todo-list-fullpage .todo-container .addTask form {
+.addTask form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 30px;
-}
-
-.todo-container .addTask form input#task-input {
-  padding: 10px 20px;
-  width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: var(--pri);
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  color: var(--tri2);
-}
-
-.todo-container .addTask form textarea {
-  padding: 10px 20px;
-  width: 100%;
-  max-height: 300px;
-  min-height: 300px;
-  background-color: var(--pri);
-  margin-bottom: 30px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  border: none;
-  outline: none;
-  color: var(--tri2);
-}
-
-.todo-container .addTask form button {
-  padding: 10px 20px;
-  width: 100%;
-  margin-bottom: 20px;
-  background-color: var(--tri);
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  outline: none;
-  border-radius: 7px;
-  transition: all ease 0.5s;
-  color: rgb(52, 52, 5);
-}
-
-.todo-container .addTask form button:active {
-  scale: 0.96;
-}
-
-.task{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    background-color: #c7ad96;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.task h5{
-    font-size: 50px;
-    color: #2a1411;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-.task h5 span{
-    font-size: 13px;
-    padding: 6px 7px;
-    color: #ffffff;
-    background-color: red;
-    border-radius: 50px;
-}
-
-.task h5 span.true{
-  opacity: 1;
-}
-
-.task h5 span.false{
-  opacity: 0;
-}
-
-.task button{
-    padding: 20px 30px;
-    border-radius: 10px;
-    background-color: green;
-    font-size: 20px;
-    border: none;
-    font-weight: 700;
-    transition: all ease 0.3s;
-    color: var(--tri2);
-
-}
-
-.task button:active{
-    scale: 0.96;
-}
-
-.mark-imp{
-
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 10px;
-    margin-bottom: 20px;
-    gap: 30px;
-}
-
-.mark-imp label{
-    font-size: 27px;
-    font-weight: 600;
-}
-
-.mark-imp input{
-    scale: 2;
-}
-
-
-.daily-planner-fullpage h2{
- font-size: 70px;
- color: var(--pri);
-}
-
-.daily-planner-fullpage .daily-planner{
-  background-color: var(--sec);
-  height: 85%;
-  width: 100%;
-  margin-top: 40px;
-  border-radius: 10px;
   padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-around;
-  overflow: auto;
 }
 
-.daily-planner-fullpage .daily-planner .daily-plan-timer{
+.addTask input,
+.addTask textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--pri);
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  color: var(--tri2);
+}
+
+.addTask textarea {
+  min-height: 150px;
+}
+
+.addTask button {
+  padding: 10px;
+  background-color: var(--tri);
+  border: none;
+  border-radius: 6px;
+  color: black;
+  font-weight: bold;
+}
+
+/* TASK LIST */
+.allTask {
+  width: 65%;
+  background-color: var(--sec);
+  border-radius: 10px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* TASK */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #c7ad96;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.task h5 {
+  font-size: 18px;
+  color: black;
+}
+
+.task button {
+  padding: 8px 12px;
+  background: green;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}
+
+/* IMPORTANT */
+.mark-imp {
   display: flex;
   align-items: center;
-  position: relative;
-  width: 49%;
-  margin-bottom: 14px;
-  
-  
+  gap: 10px;
 }
 
-.daily-planner .daily-plan-timer p{
-  position: absolute;
-  top: 10%;
-  left: 1%;
-  padding: 5px;
-  font-size: 18px;
+.mark-imp input {
+  transform: scale(1.4);
 }
 
+/* ================= DAILY ================= */
 
-.daily-planner .daily-plan-timer input{
-  padding: 10px 20px;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  padding: 20px 40px;
-  background-color: var(--tri2);
-  font-size: 30px;
-  padding-top: 35px;
-  outline: none;
-}
-
-/* motivational */
-
-.motivational-fullpage{
-  display: block;
-  position: relative;
-}
-
-.motivational-fullpage .Motivational-container{
-  height: 500px;
-  width: 600px;
-  background-color: var(--tri);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% , -50%);
-  border-radius: 40px;
-}
-
-.motivational-fullpage .Motivational-container::after{
-  content: '';
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: var(--tri);
-  border-radius: 40px;
-  scale: 1.15;
-  z-index: 8;
-  filter: blur(100px);
-
-}
-
-.motivational-fullpage .Motivational-container .Motivational-wrap{
-  /* width: 100%; */
-  height: 100%;
-  z-index: 10;
-  position: absolute;
-  background-color: var(--sec);
-  border-radius: 30px;
-  padding: 20px;
-}
-
-.motivation-1{
-  background-color: #2a1411;
-  border-radius: 20px;
-  padding: 30px;
-}
-
-.motivation-1 h2{
+.daily-planner-fullpage h2 {
   font-size: 40px;
-  font-weight: 500;
-}
-
-.motivation-2{
-  padding: 10px;
-}
-
-.motivation-2 h1{
-  font-size: 40px;
-  font-weight: 500;
   color: var(--pri);
+}
+
+.daily-planner {
+  background-color: var(--sec);
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.daily-plan-timer {
+  width: 48%;
+  position: relative;
+}
+
+.daily-plan-timer p {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 12px;
+}
+
+.daily-plan-timer input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--tri2);
+}
+
+/* ================= MOTIVATION ================= */
+
+.motivational-fullpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
+.Motivational-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--tri);
+  border-radius: 20px;
+  position: relative;
+  padding: 20px;
+}
 
+.Motivational-wrap {
+  background-color: var(--sec);
+  border-radius: 20px;
+  padding: 20px;
+}
 
+.motivation-1 h2 {
+  font-size: 24px;
+}
+
+.motivation-2 h1 {
+  font-size: 26px;
+  color: var(--pri);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 768px) {
+
+  .elems {
+    width: 45%;
+    height: 280px;
+  }
+
+  .todo-container {
+    flex-direction: column;
+  }
+
+  .addTask,
+  .allTask {
+    width: 100%;
+  }
+
+  .daily-plan-timer {
+    width: 100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+  nav {
+    height: 50px;
+  }
+
+  .elems {
+    width: 100%;
+    height: 240px;
+  }
+
+  .todo-list-fullpage {
+    font-size: 26px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task button {
+    width: 100%;
+  }
+
+  .daily-planner-fullpage h2 {
+    font-size: 26px;
+  }
+
+  .motivation-1 h2 {
+    font-size: 18px;
+  }
+
+  .motivation-2 h1 {
+    font-size: 20px;
+  }
+}
